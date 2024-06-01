@@ -24,6 +24,7 @@
 			<artifactId>core</artifactId>
 			<version>${unicine-core.version}</version>
 		</dependency>
+
 		<dependency>
 			<groupId>org.springdoc</groupId>
 			<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
