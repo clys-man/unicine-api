@@ -1,4 +1,6 @@
 spring:
+  application:
+    name: movie-service
   datasource:
     url: jdbc:postgresql://localhost:5432/unicine-core
     username: postgres
@@ -16,3 +18,10 @@ logging:
 server:
   port: 8089
 
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://localhost:8081/eureka/
+    register-with-eureka: true
