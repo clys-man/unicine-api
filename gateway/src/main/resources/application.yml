@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: gateway
+  cloud:
+    gateway:
+      routes:
+        - id: session
+          predicates:
+            - Path=/ping
+          uri: http://localhost:8082
+        - id: movie
+          predicates:
+            - Path=/movies/**
+          uri: http://localhost:8083
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://localhost:8081/eureka/
+    register-with-eureka: true
+
+logging:
+  level:
+    root: info
+    org:
+      springframework:
+        cloud:
+          gateway: trace
+
+server:
+  port: 8080
