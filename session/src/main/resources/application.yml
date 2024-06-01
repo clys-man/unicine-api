@@ -3,4 +3,3 @@ spring:
     name: session-service
 server:
   port: 8082
-
