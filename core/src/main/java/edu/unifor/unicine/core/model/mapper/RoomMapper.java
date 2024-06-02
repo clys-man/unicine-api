@@ -10,9 +10,10 @@ import org.mapstruct.Mapping;
 public interface RoomMapper {
 
     @Mapping(source = "sessions", target = "sessionDTOS")
+    @Mapping(source = "acents", target = "acentDTOS")
     RoomDTO toDTO(Room room);
 
     @InheritInverseConfiguration
-    Room toEntity(RoomDTO movie);
+    Room toEntity(RoomDTO room);
 
 }

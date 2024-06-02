@@ -2,6 +2,7 @@ package edu.unifor.unicine.room.endpoint.controller;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
@@ -22,12 +23,13 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class RoomController {
 
+	@Autowired
 	private RoomService roomService;
 	
 	 @GetMapping(path = "/all")
 	    public ResponseEntity<Iterable<RoomDTO>> list(Pageable pageable) {
-	        Page<RoomDTO> movieDTOPage = roomService.list(pageable);
-	        return new ResponseEntity<>(movieDTOPage, HttpStatus.OK);
+	        Page<RoomDTO> roomDTOPage = roomService.list(pageable);
+	        return new ResponseEntity<>(roomDTOPage, HttpStatus.OK);
 	    }
 	 
 	 @GetMapping(path = "/get/{id}")

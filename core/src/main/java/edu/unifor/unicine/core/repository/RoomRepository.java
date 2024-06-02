@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface RoomRepository extends JpaRepository<Room, Long> {
 	
-	public Room findByNumber(int numer);
+	public Room findByNumber(int number);
 	
 	public List<Room> findByTypeContains(String type);
 	

@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: room-service
+  datasource:
+    url: jdbc:postgresql://localhost:5432/unicine-core
+    username: postgres
+    password: 12345678
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+logging:
+  level:
+    org:
+      hibernate:
+        sql: debug
+
+server:
+  port: 8085
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://localhost:8085
+    register-with-eureka: true

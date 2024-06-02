@@ -21,6 +21,7 @@
         <module>core</module>
         <module>session</module>
         <module>room</module>    
+        <module>acent</module>    
      </modules>
 
     <properties>
