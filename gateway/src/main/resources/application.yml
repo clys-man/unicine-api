@@ -12,6 +12,10 @@ spring:
           predicates:
             - Path=/movies/**
           uri: http://localhost:8083
+        - id: room
+          predicates:
+            - Path=/rooms/**
+          uri: http://localhost:8084
 
 eureka:
   instance:
