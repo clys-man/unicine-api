@@ -18,7 +18,7 @@ spring:
           uri: http://localhost:8084
         - id: room
           predicates:
-            - Path=/rooms/**
+            - Path=/acents/**
           uri: http://localhost:8085
 
 eureka:
