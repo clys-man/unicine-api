@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: SESSION-SERVICE
+  h2:
+    console:
+      enabled: true
+  config:
+    import: configserver:http://${CONFIG_SERVER_URL:localhost}:9296
+
+server:
+  port: 6060
