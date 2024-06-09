@@ -1,4 +1,4 @@
-package edu.unifor.unicine.session.controller;
+package edu.unifor.unicine.session.endpoint.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

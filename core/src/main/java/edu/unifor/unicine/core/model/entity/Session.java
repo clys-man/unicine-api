@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @AllArgsConstructor
@@ -26,4 +27,7 @@ public class Session {
 
     @ManyToOne
     private Room room;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "session")
+    private List<Ticket> tickets;
 }

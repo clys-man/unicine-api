@@ -17,4 +17,9 @@ public class AcentDTO implements Serializable {
     @JsonProperty("room")
     @JsonManagedReference
     private RoomDTO roomDTO;
+
+    @JsonProperty("tickets")
+    @JsonBackReference
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    private List<TicketDTO> ticketsDTO;
 }

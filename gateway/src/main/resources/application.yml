@@ -20,6 +20,10 @@ spring:
           predicates:
             - Path=/acents/**
           uri: http://localhost:8085
+        - id: boxoffice-service
+          predicates:
+            - Path=/sales/**
+          uri: http://localhost:8089
 
 eureka:
   instance:

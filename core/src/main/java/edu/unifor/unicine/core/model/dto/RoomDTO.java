@@ -18,10 +18,10 @@ public class RoomDTO implements Serializable {
 
     @JsonProperty("sessions")
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    private List<SessionDTO> sessionDTOS;
+    private List<SessionDTO> sessionsDTO;
     
     @JsonProperty("acents")
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    private List<SessionDTO> acentDTOS;
+    private List<SessionDTO> acentsDTO;
 
 }

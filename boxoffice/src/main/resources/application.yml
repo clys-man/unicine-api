@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: boxoffice-service
+server:
+  port: 8089

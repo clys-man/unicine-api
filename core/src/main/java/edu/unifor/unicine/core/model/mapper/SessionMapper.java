@@ -11,6 +11,7 @@ public interface SessionMapper {
 
     @Mapping(source = "room", target = "roomDTO")
     @Mapping(source = "movie", target = "movieDTO")
+    @Mapping(source = "tickets", target = "ticketsDTO")
     SessionDTO toDTO(Session room);
 
     @InheritInverseConfiguration

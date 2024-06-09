@@ -21,8 +21,9 @@
         <module>core</module>
         <module>session</module>
         <module>room</module>    
-        <module>acent</module>    
-     </modules>
+        <module>acent</module>
+        <module>boxoffice</module>
+    </modules>
 
     <properties>
         <java.version>17</java.version>
