@@ -23,4 +23,7 @@ public class Room {
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "room")
     private List<Session> sessions;
+    
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "room")
+    private List<Acent> acents;
 }

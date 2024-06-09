@@ -5,6 +5,8 @@ import lombok.Data;
 
 import java.time.LocalDateTime;
 import java.util.Date;
+import java.util.List;
+
 @Data
 @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id", scope = SessionDTO.class)
 public class SessionDTO {
@@ -17,6 +19,10 @@ public class SessionDTO {
     @JsonProperty("movie")
     @JsonBackReference
     private MovieDTO movieDTO;
+
+    @JsonProperty("movie")
+    @JsonBackReference
+    private List<TicketDTO> ticketsDTO;
 
     @JsonProperty("room")
     @JsonManagedReference

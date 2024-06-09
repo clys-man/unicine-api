@@ -6,13 +6,14 @@ import org.mapstruct.InheritInverseConfiguration;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 
-@Mapper(componentModel = "spring", uses = {SessionMapper.class})
+@Mapper(componentModel = "spring", uses = {AcentMapper.class, SessionMapper.class})
 public interface RoomMapper {
 
-    @Mapping(source = "sessions", target = "sessionDTOS")
+    @Mapping(source = "sessions", target = "sessionsDTO")
+    @Mapping(source = "acents", target = "acentsDTO")
     RoomDTO toDTO(Room room);
 
     @InheritInverseConfiguration
-    Room toEntity(RoomDTO movie);
+    Room toEntity(RoomDTO room);
 
 }

@@ -1,0 +1,15 @@
+
+R
+java:S2589)"7Remove this expression which always evaluates to "true"(éá¼ùÿÿÿÿÿ
+X
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄÞ
+G
+java:S1602",Remove useless curly braces around statement(¥¢”³üÿÿÿÿ
+Y
+java:S1155<">Use isEmpty() to check whether the collection is empty or not.(É€°Îøÿÿÿÿ
+G
+java:S1602=",Remove useless curly braces around statement(Ó¡ç¤üÿÿÿÿ
+Y
+java:S1155G">Use isEmpty() to check whether the collection is empty or not.(É€°Îøÿÿÿÿ
+G
+java:S1602H",Remove useless curly braces around statement(Ó¡ç¤üÿÿÿÿ

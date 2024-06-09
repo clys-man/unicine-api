@@ -20,6 +20,9 @@
         <module>movie</module>
         <module>core</module>
         <module>session</module>
+        <module>room</module>    
+        <module>acent</module>
+        <module>boxoffice</module>
     </modules>
 
     <properties>
