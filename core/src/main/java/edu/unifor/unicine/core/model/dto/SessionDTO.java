@@ -20,7 +20,7 @@ public class SessionDTO {
     @JsonBackReference
     private MovieDTO movieDTO;
 
-    @JsonProperty("movie")
+    @JsonProperty("tickets")
     @JsonBackReference
     private List<TicketDTO> ticketsDTO;
 

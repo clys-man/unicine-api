@@ -1,5 +1,12 @@
 spring:
   application:
     name: session-service
+  datasource:
+    url: jdbc:postgresql://localhost:5432/unicine-core
+    username: postgres
+    password: 12345678
+  jpa:
+    hibernate:
+      ddl-auto: update
 server:
   port: 8082
