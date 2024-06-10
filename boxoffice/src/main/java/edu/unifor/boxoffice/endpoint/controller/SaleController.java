@@ -1,45 +1,78 @@
 package edu.unifor.boxoffice.endpoint.controller;
 
-import edu.unifor.boxoffice.endpoint.service.SaleService;
 import edu.unifor.unicine.core.model.dto.SaleDTO;
+import edu.unifor.unicine.core.model.mapper.SaleMapper;
+import edu.unifor.boxoffice.endpoint.services.SaleService;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.log4j.Log4j2;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-
 @RestController
-@RequestMapping("/sales")
+@Log4j2
+@RequestMapping("sales")
+@RequiredArgsConstructor
 public class SaleController {
-
     private final SaleService saleService;
-
-    public SaleController(SaleService saleService) {
-        this.saleService = saleService;
-    }
-
-    @PostMapping
-    public ResponseEntity<SaleDTO> createSale(@RequestBody SaleDTO saleDTO) {
-        return ResponseEntity.ok(saleService.createSale(saleDTO));
-    }
+    private final SaleMapper saleMapper;
 
     @GetMapping
-    public ResponseEntity<List<SaleDTO>> getAllSales() {
-        return ResponseEntity.ok(saleService.getAllSales());
+    public ResponseEntity<Page<SaleDTO>> list(Pageable pageable) {
+        try {
+            Page<SaleDTO> saleDTOPage = saleService.list(pageable)
+                    .map(saleMapper::toDTO);
+            log.info(saleDTOPage.toString());
+            return new ResponseEntity<>(HttpStatus.OK);
+        } catch (Exception e) {
+            // log.error("Error fetching sales list", e);
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<SaleDTO> getSaleById(@PathVariable Long id) {
-        return ResponseEntity.ok(saleService.getSaleById(id));
+    public ResponseEntity<SaleDTO> getById(@PathVariable Long id) {
+        try {
+            SaleDTO saleDTO = saleMapper.toDTO(saleService.getById(id));
+            return new ResponseEntity<>(saleDTO, HttpStatus.OK);
+        } catch (Exception e) {
+            // log.error("Error fetching sale", e);
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    @PostMapping
+    public ResponseEntity<SaleDTO> create(@RequestBody SaleDTO saleDTO) {
+        try {
+            SaleDTO savedSale = saleMapper.toDTO(saleService.create(saleMapper.toEntity(saleDTO)));
+            return new ResponseEntity<>(savedSale, HttpStatus.CREATED);
+        } catch (Exception e) {
+            // log.error("Error creating sale", e);
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<SaleDTO> updateSale(@PathVariable Long id, @RequestBody SaleDTO saleDTO) {
-        return ResponseEntity.ok(saleService.updateSale(id, saleDTO));
+    public ResponseEntity<SaleDTO> update(@PathVariable Long id, @RequestBody SaleDTO saleDTO) {
+        try {
+            SaleDTO updatedSale = saleMapper.toDTO(saleService.update(id, saleMapper.toEntity(saleDTO)));
+            return new ResponseEntity<>(updatedSale, HttpStatus.OK);
+        } catch (Exception e) {
+            // log.error("Error updating sale", e);
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteSale(@PathVariable Long id) {
-        saleService.deleteSale(id);
-        return ResponseEntity.noContent().build();
+    public ResponseEntity<Void> delete(@PathVariable Long id) {
+        try {
+            saleService.delete(id);
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        } catch (Exception e) {
+            // log.error("Error deleting sale", e);
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 }

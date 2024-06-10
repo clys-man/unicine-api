@@ -8,9 +8,10 @@ import org.mapstruct.InheritInverseConfiguration;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 
-@Mapper(componentModel = "spring", uses = {SessionMapper.class, AcentMapper.class})
+@Mapper(componentModel = "spring", uses = {SessionMapper.class, AcentMapper.class, SaleMapper.class})
 public interface TicketMapper {
 
+    @Mapping(source = "sale", target = "saleDTO")
     @Mapping(source = "acent", target = "acentDTO")
     @Mapping(source = "session", target = "sessionDTO")
     TicketDTO toDTO(Ticket ticket);

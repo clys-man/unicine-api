@@ -20,7 +20,5 @@ public class MovieDTO implements Serializable {
     private String language;
 
     @JsonProperty("sessions")
-    @JsonManagedReference
-//    @JsonInclude(JsonInclude.Include.NON_NULL)
-    private List<SessionDTO> sessionDTOS;
+    private List<SessionDTO> sessionsDTO;
 }

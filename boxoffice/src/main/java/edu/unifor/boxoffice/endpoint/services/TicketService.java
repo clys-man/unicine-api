@@ -1,4 +1,4 @@
-package src.main.java.edu.unifor.boxoffice.endpoint.service;
+package edu.unifor.boxoffice.endpoint.services;
 
 import edu.unifor.unicine.core.model.dto.TicketDTO;
 import edu.unifor.unicine.core.model.entity.Ticket;

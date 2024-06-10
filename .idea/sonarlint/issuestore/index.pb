@@ -130,3 +130,9 @@ Oacent/src/main/java/edu/unifor/unicine/acent/endpoint/service/AcentService.java
 Pmovie/src/test/java/edu/unifor/unicine/movie/ProductServiceApplicationTests.java,7\6\76e1722dd38f00373a58e85a6f95ac0f66669e84
 É
 Sdiscovery/src/test/java/edu/unifor/unicine/discovery/DiscoveryApplicationTests.java,9\c\9c378beec3cc49edd12a9c8608a614fb213542be
+~
+Ndiscovery/src/main/java/edu/unifor/unicine/discovery/DiscoveryApplication.java,f\b\fbefe3ddecc48ab47b4293422b797fd2c585739f
+Å
+Qboxoffice/src/main/java/edu/unifor/boxoffice/endpoint/services/ClientService.java,b\9\b9a7892464de773ac4754569e048db3d04cbcc5f
+
+Oboxoffice/src/main/java/edu/unifor/boxoffice/endpoint/services/SaleService.java,5\4\54d3145df067bce3c441f4b6790ea9e9951db349

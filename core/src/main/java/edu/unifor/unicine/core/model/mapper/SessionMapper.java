@@ -6,7 +6,7 @@ import org.mapstruct.InheritInverseConfiguration;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 
-@Mapper(componentModel = "spring")
+@Mapper(componentModel = "spring", uses = {RoomMapper.class, MovieMapper.class, TicketMapper.class})
 public interface SessionMapper {
 
     @Mapping(source = "room", target = "roomDTO")

@@ -17,14 +17,11 @@ public class SessionDTO {
     private double ticketPrice;
 
     @JsonProperty("movie")
-    @JsonBackReference
     private MovieDTO movieDTO;
 
     @JsonProperty("tickets")
-    @JsonBackReference
     private List<TicketDTO> ticketsDTO;
 
     @JsonProperty("room")
-    @JsonManagedReference
     private RoomDTO roomDTO;
 }

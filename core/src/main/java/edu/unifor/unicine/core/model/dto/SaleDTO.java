@@ -21,6 +21,5 @@ public class SaleDTO implements Serializable {
     private double totalPrice;
 
     @JsonProperty("tickets")
-    @JsonManagedReference
     private List<TicketDTO> ticketsDTO;
 }

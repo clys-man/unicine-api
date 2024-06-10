@@ -6,10 +6,10 @@ import org.mapstruct.InheritInverseConfiguration;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 
-@Mapper(componentModel = "spring", uses = {SessionMapper.class})
+@Mapper(componentModel = "spring")
 public interface MovieMapper {
 
-    @Mapping(source = "sessions", target = "sessionDTOS")
+    @Mapping(source = "sessions", target = "sessionsDTO")
     MovieDTO toDTO(Movie movie);
 
     @InheritInverseConfiguration

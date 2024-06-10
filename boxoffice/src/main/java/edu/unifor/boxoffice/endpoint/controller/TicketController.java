@@ -1,9 +1,9 @@
 package edu.unifor.boxoffice.endpoint.controller;
 
+import edu.unifor.boxoffice.endpoint.services.TicketService;
 import edu.unifor.unicine.core.model.dto.TicketDTO;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import src.main.java.edu.unifor.boxoffice.endpoint.service.TicketService;
 
 import java.util.List;
 

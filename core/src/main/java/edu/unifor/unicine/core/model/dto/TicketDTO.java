@@ -19,13 +19,11 @@ public class TicketDTO implements Serializable {
     private double ticketPrice;
 
     @JsonProperty("acent")
-    @JsonManagedReference
     private Acent acentDTO;
 
     @JsonProperty("session")
-    @JsonManagedReference
     private Session sessionDTO;
 
-    @JsonBackReference
+    @JsonProperty("sale")
     private SaleDTO saleDTO;
 }
